@@ -1,21 +1,19 @@
 <template>
-
-  <FormRedLyon />
-  <HamburgerMenu />
+  <CarrouselImg />
+  <!-- <FormRedLyon /> -->
+  <!-- <HamburgerMenu /> -->
 </template>
 
 <script>
 
-import HamburgerMenu from './components/HamburgerMenu.vue'
-import FormRedLyon from './components/FormRedLyon.vue'
-
+// import HamburgerMenu from './components/HamburgerMenu.vue'
+// import FormRedLyon from './components/FormRedLyon.vue'
+import CarrouselImg from "./components/CarrouselImg.vue"
 
 export default {
   name: 'App',
   components: {
-
-    FormRedLyon,
-    HamburgerMenu
+    CarrouselImg
 }
 }
 </script>

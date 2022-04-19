@@ -5,11 +5,11 @@
 
         <!-- FORM -->
         
-        <form class="col s12 m6 l6">
-
-
+        <form class="col s12 m12 l12">
+                
                 <!-- AVATAR -->
                     <div class="col s12 center container-avatar">
+                        <!-- <avatar-input v-model="form.avatar"></avatar-input> -->
                         <img id="avatar" src="../assets/logo.png" alt="avatar">
                         
                         <label class="boton-avatar">
@@ -103,7 +103,7 @@
                 
                 
                 <!-- Sign UP --> 
-                    <div class="col s12 sign-up">                        
+                    <div class="col s12 crear-cuenta">                        
                             <button type="button" name="action">
                                 Sign Up
                             </button>                   
@@ -120,18 +120,25 @@
             <div id="google-signin-button"></div>
         </div>
         
-        
+        <!-- <div id="separador" class="hide-on-small-only">
+            <span class="separacion separacion-linea top"></span>
+            <p class="separacion">O</p>
+            <span class=" separacion separacion-linea bottom"></span>
+        </div> -->
     </div>
-    
 
 
 </template>
 <script>
+// import AvatarInput from './AvatarInput.vue';
 
 export default {
     name: 'FormRedLyon',
+    components: {
+    // AvatarInput,
+},
     data() {
-        return{
+        return {
             nombre: '',
             apellido: '',
             email: '',
@@ -140,14 +147,21 @@ export default {
             dias: '',
             meses: '',
             años: '',
-            avatar: ''
+            avatar: '',
             
+            width: document.documentElement.clientWidth,
+            height: document.documentElement.clientHeight
         }
     },
-    methods: {
-
+    methods: { //sirve para la medida de la pantalla
+        getDimensions() {
+            this.width = document.documentElement.clientWidth;
+            this.height = document.documentElement.clientHeight;
+        }
+    },
+    mounted() {
+        window.addEventListener('resize', this.getDimensions);
     }
-
 }
 
 </script>
@@ -157,12 +171,24 @@ export default {
     .container-form {
         background-color: rgb(255, 255, 255);
         border-radius: 1.5rem;
-        width: 60rem; 
+        width: 30rem; 
         height: 40rem;
         position: absolute;
         left: 50%;
         top: 50%; 
         transform: translate(-50%, -50%);
+    }
+
+    @media screen and (max-width: 600px) {
+        .container-form {
+            height: 50rem;
+        }
+    }
+    @media screen and (max-width: 450px) {
+        .container-form {
+            height: 50rem;
+            width: 25rem;
+        }
     }
 
     #avatar {
@@ -188,11 +214,9 @@ export default {
     input[type="file"] {
         display: none;
     }
-
     form {
-        background: rgb(187, 187, 187);
+        background: rgb(255, 255, 255);
         text-align: left;
-        padding: 40px;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -217,20 +241,20 @@ export default {
     }
     
 
-    .sign-up {
+    .crear-cuenta {
         margin-top: 2.50rem !important;
     }
-    .sign-up > button {
+    .crear-cuenta > button {
         color: white;
         background-color: red;
         border: none;
         border-radius: 5px;
-        height: 30px;
+        height: 2.6rem;
         width: 100%;
         z-index: 1;
         transition: 500ms;
     }
-    .sign-up > button:hover {
+    .crear-cuenta > button:hover {
         background-color: #FF4545;
         border: 1px solid white;
     }
