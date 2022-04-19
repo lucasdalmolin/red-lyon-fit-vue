@@ -1,16 +1,20 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <CarrouselImg />
+  <!-- <FormRedLyon /> -->
+  <!-- <HamburgerMenu /> -->
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+// import HamburgerMenu from './components/HamburgerMenu.vue'
+// import FormRedLyon from './components/FormRedLyon.vue'
+import CarrouselImg from "./components/CarrouselImg.vue"
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    CarrouselImg
+}
 }
 </script>
 
@@ -21,6 +25,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
 }
 </style>
