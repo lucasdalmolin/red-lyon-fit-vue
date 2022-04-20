@@ -1,20 +1,39 @@
 <template>
-  <CarrouselImg />
+  <carousel-body :slides="slides"></carousel-body>
   <!-- <FormRedLyon /> -->
   <!-- <HamburgerMenu /> -->
 </template>
 
 <script>
+import CarouselBody from './components/carrousel/CarouselBody.vue'
+
 
 // import HamburgerMenu from './components/HamburgerMenu.vue'
 // import FormRedLyon from './components/FormRedLyon.vue'
-import CarrouselImg from "./components/CarrouselImg.vue"
+
 
 export default {
   name: 'App',
   components: {
-    CarrouselImg
-}
+    CarouselBody
+
+  },
+  data() {
+    return {
+      slides: [
+        "https://picsum.photos/id/1035/900/400",
+        "https://picsum.photos/id/1036/900/400",
+        "https://picsum.photos/id/1037/900/400",
+        "https://picsum.photos/id/1038/900/400",
+        "https://picsum.photos/id/1039/900/400",
+        // "./assets/img-carrousel/Imagen1.jpg",
+        // "./assets/img-carrousel/Imagen2.jpg",
+        // "./assets/img-carrousel/Imagen3.jpg",
+        // "./assets/img-carrousel/Imagen4.jpg",
+        // "./assets/img-carrousel/Imagen5.jpg"
+      ],
+    }
+  }
 }
 </script>
 
